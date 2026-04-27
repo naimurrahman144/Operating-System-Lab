@@ -38,7 +38,7 @@ void SJF(vector<Process> &p, vector<Gantt> &g, double &avgWT, double &avgTAT) {
         // 👉 find shortest job
         for (int i = 0; i < n; i++) {
             if (!p[i].done && p[i].at <= time) {
-                if (idx == -1 || p[i].bt < p[idx].bt)
+                 if(idx == -1 || p[i].bt < p[idx].bt || (p[i].bt == p[idx].bt && p[i].at < p[idx].at))
                     idx = i;
             }
         }
